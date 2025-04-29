@@ -14,14 +14,6 @@ aio.fd = {}
 aio.pstab = {}
 
 
-print()
-print()
-print()
-print("JIFFY SEZ HI")
-print()
-print()
-print()
-
 def _shutdown():
     print(__file__, "_shutdown")
 
@@ -84,6 +76,7 @@ RLock = Lock
 
 class Condition:
     def __init__(self, lock=None):
+        print("CHECKING SOME STUFF")
         self.lock = lock or Lock()
 
     def acquire(self, *args):
