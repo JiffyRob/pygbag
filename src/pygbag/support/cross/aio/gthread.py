@@ -93,7 +93,7 @@ class Condition:
     def __enter__(self):
         self.acquire()
 
-    def __exit__(self):
+    def __exit__(self, *tb):
         self.release()
 
 
