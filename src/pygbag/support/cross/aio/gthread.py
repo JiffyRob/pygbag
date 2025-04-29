@@ -90,6 +90,12 @@ class Condition:
     def wait_for(self, predicate, timeout=None):
         raise RuntimeError("wait not supported")
 
+    def __enter__(self):
+        self.acquire()
+
+    def __exit__(self):
+        self.release()
+
 
 class Thread:
     def __init__(self, group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None):
