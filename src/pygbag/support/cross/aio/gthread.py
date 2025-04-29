@@ -76,8 +76,13 @@ RLock = Lock
 
 class Condition:
     def __init__(self, lock=None):
-        print("CHECKING SOME STUFF")
         self.lock = lock or Lock()
+
+    def __enter__(self):
+        self.acquire()
+
+    def __exit__(self, *tb):
+        self.release()
 
     def acquire(self, *args):
         return self.lock.acquire()
@@ -90,12 +95,6 @@ class Condition:
 
     def wait_for(self, predicate, timeout=None):
         raise RuntimeError("wait not supported")
-
-    def __enter__(self):
-        self.acquire()
-
-    def __exit__(self, *tb):
-        self.release()
 
 
 class Thread:
