@@ -14,6 +14,14 @@ aio.fd = {}
 aio.pstab = {}
 
 
+print()
+print()
+print()
+print("JIFFY SEZ HI")
+print()
+print()
+print()
+
 def _shutdown():
     print(__file__, "_shutdown")
 
